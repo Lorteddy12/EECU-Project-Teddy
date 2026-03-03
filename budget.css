@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+}
+
+#buttons-stepone {
+    display: flex;
+    flex-direction: row-reverse;
+    
+    align-items: center;
+}
+
+#nav-header-img {
+    width: 100%;
+}
+
+#footer-img {
+    width: 100%;
+}
+
+#budget-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+.expenses {
+    display: flex;
+    flex-direction: column;
+}
+
+#housing {
+    text-align: center;
+    width: 5vw;
+    height: 3vh;
+}
+
+#essentials {
+    text-align: center;
+    width: 5vw;
+    height: 3vh;
+}
+
+#student-loans {
+    text-align: center;
+    width: 5vw;
+    height: 3vh
+}
+
+#life-style {
+    text-align: center;
+    width: 5vw;
+    height: 3vh;
+}
+
+#future-proofing {
+    
+}
+
+#expense-input {
+   width: 50%;
+    display: flex;
+   flex-direction: column;
+}
+
+.containter-input {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+   
+   
+}

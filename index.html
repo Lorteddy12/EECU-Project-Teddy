@@ -9,17 +9,21 @@
 </head>
 <body>
     <nav>
-        <img src="Nav.png">
+        <img src="Nav.png" id="nav-header-img">
     </nav>
     <main>
-    <section>
+    <section id="Step-one">
         <h3 class="budget-header">How much do you make?</h3>
         <span class="budget">
             <input type="text" id="career" placeholder="Choose Your Career:">
             <input type="text" id="salary" placeholder="Monthly Salary">
         </span>
-        <button>Save Draft</button>
-        <button>Print Draft</button>
+        <section id="buttons-stepone">
+            <form id="buttons">
+                <button>Save Draft</button>
+                <button>Print Draft</button>
+            </form>
+        </section>
 
         <h3 class="tax-header">Tax deductions</h3>
         <span class="taxes">
@@ -33,32 +37,46 @@
     <section>
         <h3 class="expenses-header">Allocate Your Money</h3>
         <span class="expenses">
-            <label for="housing">Housing</label>
-            <input type="text" id="housing" placeholder="Housing">
+            <form id="expense-input">
+                <div class="container-input">
+                    <label for="housing">Housing:</label>
+                    <input type="text" id="housing" placeholder="Housing">
+                </div>
             <br>
 
-            <label for="essentials">Essentials</label>
-            <input type="text" id="essentials" placeholder="Essentials">
+           <div class="container-input">
+                <label for="essentials">Essentials:</label>
+                <input type="text" id="essentials" placeholder="Essentials">
+           </div>
             <br>
 
-            <label for="student-loans">Student Loans</label>
-            <input type="text" id="student-loans" placeholder="Student Loans/Debt">
+            <div class="container-input">
+                <label for="student-loans">Student Loans:</label>
+                <input type="text" id="student-loans" placeholder="Loans/Debt">
+            </div>
             <br>
 
-            <label for="life-style">Life-Style</label>
-            <input type="text" id="life-style" placeholder="Life-Style">
+            <div class="container-input">
+                <label for="life-style">Life-Style:</label>
+                <input type="text" id="life-style" placeholder="Life-Style">
+            </div>
             <br>
 
-            <label for="future-proofing">Future-Proofing</label>
-            <input type="text" id="future-proofing" placeholder="Future Proofing">
+            <div class="conatainer-input">
+                <label for="future-proofing">Future-proofing:</label>                 <input type="text" id="future-proofing" placeholder="Future Proofing">
+            </div>
             <br>
             <p>Leftover Cash: <div class="leftoverIncome"></div></p>
+            </form>
         </span>
     </section>
-    <section>
+    <section id="budget-summary">
+        <div>
+            <p>3</p>
+        </div>
         <h3 class="summary-header">Budget Summary</h3>
         <span class="summary">
-            <p>Monthly Budget: <div id="monthlyBudget"></div></p>
+            <p>Monthly Budget: <div id="monthlyBudget"></div></p> 
             <p>Automatic Deductions: <div id="taxesSubtract"></div></p>
             <p>Total Expenses: <div id="ExpenseSubtract"></div></p>
             <p>Lefover Cash: <div class="leftoverIncome"></div></p>
@@ -78,7 +96,7 @@
     </section>
     </main>
     <footer class="footer">
-        <img src="Footer.png">
+        <img src="Footer.png" id="footer-img">
     </footer>
 </body>
 </html>
