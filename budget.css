@@ -1,73 +1,28 @@
 * {
     padding: 0;
-    box-sizing: border-box;
 }
-
-
 
 body {
     margin: 0;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
 }
-
-#buttons-stepone {
+main{
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-
+    flex-flow: column;
+}
+#nav{
+    width: 99.25vw;
 }
 
-#nav-header-img {
-    width: 100%;
-}
-
-#footer-img {
-    width: 100%;
-}
-
-#budget-summary {
-    display: flex;
-    flex-direction: column;
-}
-
-.expenses {
-    display: flex;
-    flex-direction: column;
-}
-
-#housing {
-    text-align: center;
-    width: auto;
-    height: 3vh;
-}
-
-#essentials {
-    text-align: center;
-    width: auto;
-    height: 3vh;
-}
-
-#student-loans {
-    text-align: center;
-    width: auto;
-    height: 3vh
-}
-
-#life-style {
-    text-align: center;
-    width: auto;
-    height: 3vh;
-}
-
-#future-proofing {
-    text-align: center;
-    width: auto;
-    height: 3vh;
-    
+#footer{
+    width: 100vw;
 }
 
 #expense-input {
    width: 50%;
-    display: flex;
+   display: flex;
    flex-direction: column;
 }
 
@@ -85,14 +40,25 @@ body {
     width: 100%;
 }
 .taxes { /* make this into a table using flexbox */
-    display: flex;
-    flex: 0 0 50%;
-    box-sizing: border-box;
-    padding: 10px;
+    display:grid ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:33% 33% 33%;
+    background-color:#f4f4f4;
+    height:fit-content;
+    width:92.5vw;
+    align-items: center;
+    justify-content: center;
+}
+.taxes p {
     border: 1px solid #000000;
-    flex-direction: column;
-    flex-wrap: wrap;
-
+    padding: 5px;
+    box-sizing: border-box;
+    margin:0;
+    height:10vh;
+    width:100%;
+}
+.taxes p:nth-child(5) {
+    width:200%;
 }
 #allocate-your-money {
    border: #000000 1px solid;

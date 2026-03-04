@@ -9,15 +9,19 @@
 </head>
 <body>
     <nav>
-        <img src="Nav.png" id="nav-header-img">
+        <img src="Nav.png" id="nav">
     </nav>
     <main>
         <p>1</p>
     <section id="Step-one">
         <h3 class="budget-header">How much do you make?</h3>
         <span class="budget">
-            <input type="text" id="career" placeholder="Choose Your Career:">
-            <input type="text" id="salary" placeholder="Monthly Salary">
+            <select name="career" id="career">
+                <option value="default">Please Choose Your Career</option>
+            </select>
+            <div id="salary">
+
+            </div>
         </span>
         <section id="buttons-stepone">
             <form id="buttons">
@@ -27,13 +31,13 @@
         </section>
 
         <h3 class="tax-header">Tax deductions</h3>
-        <span class="taxes">
+        <div class="taxes">
             <p>Medicare: 1.45%</p>
             <p>Social Security: 6.2%</p>
             <p>Federal Income Tax</p>
             <p>State tax: 4.0%</p>
             <p>Monthly Budget</p>
-        </span>
+        </div>
     </section>
     <section id="allocate-your-money">
         <h3 class="expenses-header">Allocate Your Money</h3>
@@ -64,7 +68,8 @@
             <br>
 
             <div class="conatainer-input">
-                <label for="future-proofing">Future-proofing:</label>                 <input type="text" id="future-proofing" placeholder="Future Proofing">
+                <label for="future-proofing">Future-proofing:</label>
+                <input type="text" id="future-proofing" placeholder="Future Proofing">
             </div>
             <br>
             <p>Leftover Cash: <div class="leftoverIncome"></div></p>
@@ -96,8 +101,6 @@
         <p>Leftover Cash: <div class="leftoverIncome"></div></p>
     </section>
     </main>
-    <footer class="footer">
-        <img src="Footer.png" id="footer-img">
-    </footer>
+        <img src="Footer.png" id="footer">
 </body>
 </html>
