@@ -52,3 +52,12 @@ savings.addEventListener("input", (form) => {
     div.innerHTML = `${cost}`;
 }
 )
+getElementById("career").innerHTML = `${getCareer}`;
+async function getCareer(url) {
+    const response = await fetch("https://eecu-data-server.vercel.app/data/2023");
+    const data = await response.json();
+    return data;
+    
+
+}
+

@@ -11,9 +11,9 @@ body {
 
 #buttons-stepone {
     display: flex;
-    flex-direction: row-reverse;
-    
-    align-items: center;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+
 }
 
 #nav-header-img {
@@ -36,29 +36,32 @@ body {
 
 #housing {
     text-align: center;
-    width: 5vw;
+    width: auto;
     height: 3vh;
 }
 
 #essentials {
     text-align: center;
-    width: 5vw;
+    width: auto;
     height: 3vh;
 }
 
 #student-loans {
     text-align: center;
-    width: 5vw;
+    width: auto;
     height: 3vh
 }
 
 #life-style {
     text-align: center;
-    width: 5vw;
+    width: auto;
     height: 3vh;
 }
 
 #future-proofing {
+    text-align: center;
+    width: auto;
+    height: 3vh;
     
 }
 
@@ -74,4 +77,25 @@ body {
     flex-direction: row;
    
    
+}
+#buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+}
+.taxes { /* make this into a table using flexbox */
+    display: flex;
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #000000;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+#allocate-your-money {
+   border: #000000 1px solid;
+    display: flex;
+    flex-direction: column;
 }
