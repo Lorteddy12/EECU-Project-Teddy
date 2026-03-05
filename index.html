@@ -13,7 +13,7 @@
     </nav>
     <main>
         <p>1</p>
-    <section id="Step-one">
+    <section id="step-one">
         <h3 class="budget-header">How much do you make?</h3>
         <span class="budget">
             <select name="career" id="career">
@@ -25,8 +25,8 @@
         </span>
         <section id="buttons-stepone">
             <form id="buttons">
-                <button>Save Draft</button>
-                <button>Print Draft</button>
+                <button id="save" class="btn">Save Draft</button>
+                <button id="print" class="btn">Print Draft</button>
             </form>
         </section>
 
@@ -39,47 +39,52 @@
             <p>Monthly Budget</p>
         </div>
     </section>
-    <section id="allocate-your-money">
+
+
+    <section id="step-two">
         <h3 class="expenses-header">Allocate Your Money</h3>
         <span class="expenses">
             <form id="expense-input">
                 <div class="container-input">
                     <label for="housing">Housing:</label>
-                    <input type="text" id="housing" placeholder="Housing">
+                    <input type="number" id="housing" placeholder="Housing">
                 </div>
             <br>
 
            <div class="container-input">
                 <label for="essentials">Essentials:</label>
-                <input type="text" id="essentials" placeholder="Essentials">
+                <input type="number" id="essentials" placeholder="Essentials">
            </div>
             <br>
 
             <div class="container-input">
                 <label for="student-loans">Student Loans:</label>
-                <input type="text" id="student-loans" placeholder="Loans/Debt">
+                <input type="number" id="student-loans" placeholder="Loans/Debt">
             </div>
             <br>
 
             <div class="container-input">
                 <label for="life-style">Life-Style:</label>
-                <input type="text" id="life-style" placeholder="Life-Style">
+                <input type="number" id="life-style" placeholder="Life-Style">
             </div>
             <br>
 
             <div class="conatainer-input">
                 <label for="future-proofing">Future-proofing:</label>
-                <input type="text" id="future-proofing" placeholder="Future Proofing">
+                <input type="number" id="future-proofing" placeholder="Future Proofing">
             </div>
             <br>
             <p>Leftover Cash: <div class="leftoverIncome"></div></p>
             </form>
         </span>
     </section>
-    <section id="budget-summary">
-        <div>
-            <p>3</p>
-        </div>
+
+    <div id="pieChart"></div>
+    <!-- MOVE THE PIE CHART WHEN THE PIE CHART IS ADDED -->
+    <p>3</p>
+    <div id="formatting1">
+        <section id="stepThree">
+                <section id="summary">
         <h3 class="summary-header">Budget Summary</h3>
         <span class="summary">
             <p>Monthly Budget: <div id="monthlyBudget"></div></p> 
@@ -87,12 +92,10 @@
             <p>Total Expenses: <div id="ExpenseSubtract"></div></p>
             <p>Lefover Cash: <div class="leftoverIncome"></div></p>
         </span> 
+        </section>
     </section>
     <section id="results">
         <h4>Monthly Budget Distribution</h4>
-        <div id="pieChart">
-
-        </div>
         <p>Housing: <div id="housingCost"></div></p>
         <p>Essentials: <div id="essentialsCost"></div></p>
         <p>Student Loans/Debt: <div id="loansCost"></div></p>
@@ -100,6 +103,7 @@
         <p>Future-Proofing: <div id="futureCost"></div></p>
         <p>Leftover Cash: <div class="leftoverIncome"></div></p>
     </section>
+    </div>
     </main>
         <img src="Footer.png" id="footer">
 </body>
