@@ -119,6 +119,46 @@ function displayCareerInfo(choice) {
     careerInfo.innerHTML = `Occupation: ${choice.Occupation}<br>Salary: $${choice.Salary}`;
 }
 
+let currentChart = null;
+
+document.getElementById("but").addEventListener("click", () => {
+    const canvas = document.getElementById("chartCanvas");
+    const house = document.getElementById("housing").value;
+    const essen = document.getElementById("essentials").value;
+    const student = document.getElementById("student-loans").value;
+    const life = document.getElementById("life-style").value;
+    const future = document.getElementById("future-proofing").value;
+
+    // Destroy old chart if it exists (common Chart.js gotcha)
+    if (currentChart) currentChart.destroy();
+  
+    // Build chart config based on type
+    const config = doughnutte (house, essen, student, life, future);
+  
+    currentChart = new Chart(canvas, config);
+  });
+
+// DOUGHNUT
+function doughnutte(one, two, three, four, five) {
+    
+
+ return {
+      type: "doughnut",
+      data: {
+        labels: ["Housing (%)", "Essentials (%)", "Student Loans (%)", "Life-style (%)", "Life-Style (%)"],
+        datasets: [{ label: "Rider mix", data: [one, two, three, four, five] }]
+      },
+      options: {
+        plugins: {
+          title: { display: true, text: `Total Deduction: ${one} (${two}) ${three} ${four} ${five}` }
+        }
+      }
+    };
+  }
+  
+document.getElementById("chartCanvas").innerHtml
+
+
 loadChoice();
 displayCareerInfo(choice);
 getCareers();
