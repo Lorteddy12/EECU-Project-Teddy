@@ -4,36 +4,39 @@
 
 body {
     margin: 0;
-    display:flex;
-    flex-flow:row wrap;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
-main{
+
+main {
     display: flex;
     flex-flow: column;
 }
-#nav{
+
+#nav {
     width: 99.25vw;
 }
 
-#footer{
+#footer {
     width: 100vw;
 }
 
 #expense-input {
-   width: 50%;
-   display: flex;
-   flex-direction: column;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .containter-input {
     width: 50%;
     display: flex;
     flex-direction: row;
-    
-   
-   
+
+
+
 }
+
 #buttons {
     display: flex;
     flex-direction: row;
@@ -43,29 +46,33 @@ main{
 }
 
 
-.taxes { /* make this into a table using flexbox */
-    display:grid;
+.taxes {
+    /* make this into a table using flexbox */
+    display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows:33% 33% 33%;
-    background-color:#f4f4f4;
-    height:fit-content;
-    width:92.5vw;
+    grid-template-rows: 33% 33% 33%;
+    background-color: #f4f4f4;
+    height: fit-content;
+    width: 92.5vw;
     align-items: center;
     justify-content: center;
 }
+
 .taxes p {
     border: 1px solid #000000;
     padding: 5px;
     box-sizing: border-box;
-    margin:0;
-    height:5vh;
-    width:100%;
+    margin: 0;
+    height: 5vh;
+    width: 100%;
 }
+
 .taxes p:nth-child(5) {
-    width:200%;
+    width: 200%;
 }
+
 #step-two {
-   border: #000000 1px solid;
+    border: #000000 1px solid;
     display: flex;
     flex-direction: column;
     padding: 2%;
@@ -90,6 +97,7 @@ main{
     padding: 2%;
     width: fit-content;
 }
+
 #formatting1 {
     display: flex;
     flex-wrap: wrap;
@@ -100,11 +108,13 @@ main{
     padding-right: 2%;
     padding-left: 2%;
 }
+
 .careerCont {
     display: flex;
     align-items: center;
     gap: 25px;
 }
+
 .steps::before {
     content: "";
     position: absolute;
@@ -142,6 +152,7 @@ main{
     border-color: #1e73ff;
     color: white;
 }
+
 .input {
     display: flex;
     flex-direction: column;
@@ -154,4 +165,14 @@ main{
     width: 15vw;
     border-radius: 20px;
     font-size: 32px;
+}
+
+.step-div {
+    padding: 10px;
+    color: #1e73ff;
+    border-radius: 100px;
+}
+
+#buttons-stepone {
+    padding: 1vh;
 }

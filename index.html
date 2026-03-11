@@ -14,7 +14,15 @@
         <img src="Nav.png" id="nav">
     </nav>
     <main>
-        <div>step 1</div>
+        <section id="buttons-stepone">
+            <form id="buttons">
+                <button id="save" class="btn">Save Draft</button>
+                <button id="print" class="btn">Print Draft</button>
+            </form>
+        </section>
+        <div class="step-div">
+            <h1> Step 1 </h1>
+        </div>
         <section id="dropdown-menu">
             <div class="careerCont">
                 <h2 class="title">Select Career</h2>
@@ -25,26 +33,22 @@
             </div>
             <h3> <span id="career"></span></h3>
             <section id="monthlyIncome">
-                <h2 id="monthlyHead">Monthly Income</h2>
+                <h2 id="monthlyHead"><!--JS affects this id--></h2>
+                <h4>(Monthly Income without Taxes or Expenses)</h3>
 
-
-                </div>
-                </span>
-                <section id="buttons-stepone">
-                    <form id="buttons">
-                        <button id="save" class="btn">Save Draft</button>
-                        <button id="print" class="btn">Print Draft</button>
-                    </form>
-                </section>
-                <div id="formatting">Step 2</div>
-                <h3 class="tax-header">Tax deductions</h3>
-                <div class="taxes">
-                    <p class="medicare">Medicare: 1.45%</p>
-                    <p class="SS">Social Security: 6.2%</p>
-                    <p class="federal">Federal Income Tax</p>
-                    <p class="state">State tax: 4.0%</p>
-                    <p class="monthlyBudget">Monthly Budget</p>
-                </div>
+                    </div>
+                    </span>
+                    <div class="step-div">
+                        <h1> Step 2 </h1>
+                    </div>
+                    <h3 class="tax-header">Tax deductions</h3>
+                    <div class="taxes">
+                        <p class="medicare">Medicare: 1.45%</p>
+                        <p class="SS">Social Security: 6.2%</p>
+                        <p class="federal">Federal Income Tax</p>
+                        <p class="state">State tax: 4.0%</p>
+                        <p class="monthlyBudget">Monthly Budget</p>
+                    </div>
             </section>
 
 
@@ -92,7 +96,9 @@
 
             <canvas id="chartCanvas" height="873" width="873" style="display: block; box-sizing: border-box; height: 698.4px; width: 698.4px;"></canvas>
             <!-- MOVE THE PIE CHART WHEN THE PIE CHART IS ADDED -->
-            <div>Step3</div>
+            <div class="step-div">
+                <h1> Step 3 </h1>
+            </div>
             <div id="formatting1">
                 <section id="stepThree">
                     <section id="summary">
