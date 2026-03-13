@@ -194,115 +194,64 @@ savings.addEventListener("input", (form) => {
 
 // chart.js code to create a pie chart of expenses
 
-// Data for our pie chart
-const pieChartData = [
-    { label: 'Housing', value: document.getElementById(), color: '#FF6384' },
-    { label: 'Essentials', value: 50, color: '#36A2EB' },
-    { label: 'Loans', value: 20, color: '#FFCE56' },
-    { label: 'LifeStyle', value: 40, color: '#4BC0C0' },
-    { label: 'Future', value: 10, color: '#9966FF' }
-];
 
-// Function to draw the pie chart
-function drawPieChart(canvasId, data) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) {
-        console.error(`Canvas element with ID '${canvasId}' not found.`);
-        return;
-    }
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-        console.error("2D context not available for the canvas.");
-        return;
-    }
-
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const radius = Math.min(centerX, centerY) * 0.7; // 70% of the smaller dimension
-
-    let totalValue = 0;
-    data.forEach(item => {
-        totalValue += item.value;
-    });
-
-    let currentAngle = 0;
-    function addSlice() {
-            const sliceNameInput = document.getElementById('sliceNameInput');
-            const sliceValueInput = document.getElementById('sliceValueInput');
-            const errorMsg = document.getElementById('errorMsg');
-
-            const name = sliceNameInput.value.trim(); // .trim() removes leading/trailing whitespace
-            const value = parseFloat(sliceValueInput.value);
-
-            // Basic validation
-            if (!name) {
-                errorMsg.textContent = "Please enter a slice name.";
-                return;
-            }
-            if (isNaN(value) || value < 0) {
-                errorMsg.textContent = "Please enter a valid non-negative number for the value.";
-                return;
-            }
-
-            // Create a new data object for the slice
-            const newSlice = {
-                label: name,
-                value: value,
-                // You could add a color property here too if you want user to pick colors
-                // color: '#RRGGBB' // e.g., prompt for color or generate randomly
-            };
-
-            // Add the new slice to our dynamic data array
-            dynamicPieChartData.push(newSlice);
-
-            // Redraw the chart with the updated data
-            drawPieChart('myPieChart', dynamicPieChartData);
-
-            // Clear the input fields for the next entry
-            sliceNameInput.value = '';
-            sliceValueInput.value = '0';
-            errorMsg.textContent = ''; // Clear any previous error messages
-            sliceNameInput.focus(); // Set focus back to name input for convenience
-        }
-
-    data.forEach(item => {
-        const sliceAngle = (item.value / totalValue) * Math.PI * 2; // Angle in radians
-
-        // Draw the slice
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY); // Move to center of the circle
-        ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
-        ctx.closePath();
-        ctx.fillStyle = item.color;
-        ctx.fill();
-        ctx.strokeStyle = '#fff'; // White border between slices
-        ctx.lineWidth = 1;
-        ctx.stroke();
-
-        // Draw the label (optional, placed at the midpoint of the arc)
-        const textAngle = currentAngle + sliceAngle / 2;
-        const textX = centerX + Math.cos(textAngle) * (radius / 1.5); // Position closer to center
-        const textY = centerY + Math.sin(textAngle) * (radius / 1.5);
-
-        ctx.fillStyle = '#000'; // Text color
-        ctx.font = '12px Arial';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-
-        // Only show percentage if totalValue is not zero to avoid division by zero
-        if (totalValue > 0) {
-            const percentage = ((item.value / totalValue) * 100).toFixed(1);
-            ctx.fillText(`${item.label} (${percentage}%)`, textX, textY);
-        } else {
-            ctx.fillText(item.label, textX, textY);
-        }
-
-
-        currentAngle += sliceAngle; // Update current angle for the next slice
-    });
-}
-
-// Call the function to draw the chart when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    drawPieChart('myPieChart', pieChartData);
-});
+const labels = ['Housing', 'Essentials', 'Loans', 'Lifestyle', 'Future'];
+              const colors = ['#3266ad', '#5ca85c', '#d8703a', '#9b59b6', '#1aaa8c'];
+              const ids = ['v0', 'v1', 'v2', 'v3', 'v4'];
+             
+              function getValues() {
+                return ids.map(id => Math.max(0, parseFloat(document.getElementById(id).value) || 0));
+              }
+             
+              const chart = new Chart(document.getElementById('pie'), {
+                type: 'pie',
+                data: {
+                  labels,
+                  datasets: [{
+                    data: getValues(),
+                    backgroundColor: colors,
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                      callbacks: {
+                        label: (ctx) => {
+                          const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                          const pct = total > 0 ? ((ctx.raw / total) * 100).toFixed(1) : 0;
+                          return ` ${ctx.label}: ${ctx.raw.toLocaleString()} (${pct}%)`;
+                        }
+                      }
+                    }
+                  }
+                }
+              });
+             
+              function buildLegend(vals) {
+                const total = vals.reduce((a, b) => a + b, 0);
+                const el = document.getElementById('legend');
+                el.innerHTML = labels.map((l, i) => {
+                  const pct = total > 0 ? ((vals[i] / total) * 100).toFixed(1) : '0.0';
+                  return `<span style="display:flex;align-items:center;gap:5px;">
+                    <span style="width:10px;height:10px;border-radius:2px;background:${colors[i]};"></span>
+                    ${l} ${pct}%
+                  </span>`;
+                }).join('');
+              }
+             
+              function update() {
+                const vals = getValues();
+                const total = vals.reduce((a, b) => a + b, 0);
+                chart.data.datasets[0].data = vals;
+                chart.update();
+                document.getElementById('total-label').textContent = 'Total: ' + total.toLocaleString();
+                buildLegend(vals);
+              }
+             
+              ids.forEach(id => document.getElementById(id).addEventListener('input', update));
+              buildLegend(getValues());

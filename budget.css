@@ -143,6 +143,14 @@ main {
     color: #666;
 }
 
+/*RECEIVED FROM CLAUDE TO HELP WITH THE GRAPH*/ 
+body { font-family: sans-serif; padding: 24px; background: #fff; color: #111; }
+.input-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+.input-row label { font-size: 14px; width: 90px; }
+.input-row input[type=number] { width: 80px; padding: 5px 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 6px; }
+.total-line { font-size: 13px; color: #666; margin: 4px 0 16px; }
+#legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #555; margin-top: 8px; }
 /* Active Step */
 .step.active .circle {
     background: #1e73ff;
