@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <title>Teddy Budget project</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/chart.umd.min.js"></script>
 </head>
-
 <body>
     <nav>
         <img src="Nav.png" id="nav">
@@ -36,7 +34,6 @@
             <section id="monthlyIncome">
                 <h2 id="monthlyHead"><!--JS affects this id--></h2>
                 <h4>(Monthly Income without Taxes or Expenses)</h3>
-
                     </div>
                     </span>
                     <div class="step-div">
@@ -46,15 +43,12 @@
                     <div class="taxes">
                         <p class="medicare">Medicare: 1.45%</p>
                         <p class="SS">Social Security: 6.2%</p>
-                        <p class="federal">Federal Income Tax</p>
+                        <p class="federal">federal tax</p>
                         <p class="state">State tax: 4.0%</p>
                         <p class="monthlyBudget">Monthly Budget</p>
                     </div>
             </section>
-
-
             <section id="step-two">
-                
                 <span class="expenses">
                     <form id="expense-input">
                         <div class="container-input">
@@ -62,25 +56,21 @@
                             <input type="number" id="housing" placeholder="Housing">
                         </div>
                         <br>
-
                         <div class="container-input">
                             <label for="essentials">Essentials:</label>
                             <input type="number" id="essentials" placeholder="Essentials">
                         </div>
                         <br>
-
                         <div class="container-input">
                             <label for="student-loans">Student Loans:</label>
                             <input type="number" id="student-loans" placeholder="Loans/Debt">
                         </div>
                         <br>
-
                         <div class="container-input">
                             <label for="life-style">Life-Style:</label>
                             <input type="number" id="life-style" placeholder="Life-Style">
                         </div>
                         <br>
-
                         <div class="conatainer-input">
                             <label for="future-proofing">Future-proofing:</label>
                             <input type="number" id="future-proofing" placeholder="Future Proofing">
@@ -90,29 +80,18 @@
                         <div class="leftoverIncome"></div>
                         </p>
                     </form>
-                </span><div id="chart-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 240px; position: relative; height: 280px;">
-                    <canvas id="pie"></canvas>
-                </div>
+                </span>
+                <div id="chart-container"
+                    style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 240px; position: relative; height: 280px;">
+                        <canvas id="pie"></canvas>
+                    </div>
                 </div>
                 <div id="legend"></div> <!-- using js to show the percentage functions -->
-
-
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
             </section>
-
             </head>
-
             <body>
-
-                
-                
-
-
-
-
-
-
                 <div class="step-div">
                     <h1> Step 3 </h1>
                 </div>
@@ -161,5 +140,4 @@
     </main>
     <img src="Footer.png" id="footer">
 </body>
-
 </html>
