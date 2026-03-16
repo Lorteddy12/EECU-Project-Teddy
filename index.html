@@ -54,11 +54,11 @@
 
 
             <section id="step-two">
-                <h3 class="expenses-header">Allocate Your Money</h3>
+                
                 <span class="expenses">
                     <form id="expense-input">
                         <div class="container-input">
-                            <label for="housing">Housing:</label>
+                            <h3 class="expenses-header">Allocate Your Money</h3><label for="housing">Housing:</label>
                             <input type="number" id="housing" placeholder="Housing">
                         </div>
                         <br>
@@ -90,81 +90,74 @@
                         <div class="leftoverIncome"></div>
                         </p>
                     </form>
-                </span>
+                </span><div id="chart-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                <div style="flex: 1; min-width: 240px; position: relative; height: 280px;">
+                    <canvas id="pie"></canvas>
+                </div>
+                </div>
+                <div id="legend"></div> <!-- using js to show the percentage functions -->
+
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
             </section>
-        
+
             </head>
+
             <body>
-            <div style="display: flex; flex-wrap: wrap; gap: 32px; padding: 1rem 0;">
-              <div style="flex: 0 0 220px;">
-                <div class="input-row"><span class="dot" style="background:#3266ad;"></span><label>Housing</label><input type="number" id="v0" value="1500" min="0"></div>
-                <div class="input-row"><span class="dot" style="background:#5ca85c;"></span><label>Essentials</label><input type="number" id="v1" value="800" min="0"></div>
-                <div class="input-row"><span class="dot" style="background:#d8703a;"></span><label>Loans</label><input type="number" id="v2" value="400" min="0"></div>
-                <div class="input-row"><span class="dot" style="background:#9b59b6;"></span><label>Lifestyle</label><input type="number" id="v3" value="300" min="0"></div>
-                <div class="input-row"><span class="dot" style="background:#1aaa8c;"></span><label>Future</label><input type="number" id="v4" value="500" min="0"></div>
-                <p class="total-line" id="total-label"></p> 
-                <!-- CHART -->
-              </div>
-             
-              <div style="flex: 1; min-width: 240px; position: relative; height: 280px;">
-                <canvas id="pie"></canvas>
-              </div>
-            </div>
-             
-            <div id="legend"></div>
-             
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 
-            
+                
+                
 
-           
-            <!-- MOVE THE PIE CHART WHEN THE PIE CHART IS ADDED -->
-   
-            <div class="step-div">
-                <h1> Step 3 </h1>
-            </div>
-            <div id="formatting1">
-                <section id="stepThree">
-                    <section id="summary">
-                        <h3 class="summary-header">Budget Summary</h3>
-                        <span class="summary">
-                            <p>Monthly Budget:
-                            <div id="monthlyBudget"></div>
-                            </p>
-                            <p>Automatic Deductions:
-                            <div id="taxesSubtract"></div>
-                            </p>
-                            <p>Total Expenses:
-                            <div id="ExpenseSubtract"></div>
-                            </p>
-                            <p>Lefover Cash:
-                            <div class="leftoverIncome"></div>
-                            </p>
-                        </span>
+
+
+
+
+
+                <div class="step-div">
+                    <h1> Step 3 </h1>
+                </div>
+                <div id="formatting1">
+                    <section id="stepThree">
+                        <section id="summary">
+                            <h3 class="summary-header">Budget Summary</h3>
+                            <span class="summary">
+                                <p>Monthly Budget:
+                                <div id="monthlyBudget"></div>
+                                </p>
+                                <p>Automatic Deductions:
+                                <div id="taxesSubtract"></div>
+                                </p>
+                                <p>Total Expenses:
+                                <div id="ExpenseSubtract"></div>
+                                </p>
+                                <p>Lefover Cash:
+                                <div class="leftoverIncome"></div>
+                                </p>
+                            </span>
+                        </section>
                     </section>
-                </section>
-                <section id="results">
-                    <h4>Monthly Budget Distribution</h4>
-                    <p>Housing:
-                    <div id="housingCost"></div>
-                    </p>
-                    <p>Essentials:
-                    <div id="essentialsCost"></div>
-                    </p>
-                    <p>Student Loans/Debt:
-                    <div id="loansCost"></div>
-                    </p>
-                    <p>Life Style:
-                    <div id="lifestyleCost"></div>
-                    </p>
-                    <p>Future-Proofing:
-                    <div id="futureCost"></div>
-                    </p>
-                    <p>Leftover Cash:
-                    <div class="leftoverIncome"></div>
-                    </p>
-                </section>
-            </div>
+                    <section id="results">
+                        <h4>Monthly Budget Distribution</h4>
+                        <p>Housing:
+                        <div id="housingCost"></div>
+                        </p>
+                        <p>Essentials:
+                        <div id="essentialsCost"></div>
+                        </p>
+                        <p>Student Loans/Debt:
+                        <div id="loansCost"></div>
+                        </p>
+                        <p>Life Style:
+                        <div id="lifestyleCost"></div>
+                        </p>
+                        <p>Future-Proofing:
+                        <div id="futureCost"></div>
+                        </p>
+                        <p>Leftover Cash:
+                        <div class="leftoverIncome"></div>
+                        </p>
+                    </section>
+                </div>
     </main>
     <img src="Footer.png" id="footer">
 </body>
